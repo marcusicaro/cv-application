@@ -1,0 +1,36 @@
+.form-content {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 15px;
+}
+form {
+    display: grid;
+    /* grid-template-rows: min-content min-content; */
+    gap: 15px;
+    font-family: serif;
+}
+
+input {
+    appearance: none;
+    -webkit-appearance: none;
+	-moz-appearance: none;
+    border: 1px solid silver;
+}
+
+input:focus {
+    outline: 1px solid silver;
+}
+
+button {
+    appearance: none;
+    color: aliceblue;
+    background-color: black;
+    outline: 1px solid white;
+    width: 100px;
+    font-family: sans-serif;
+}
+
+.input-content {
+    display: grid;
+    gap: 5px;
+}
