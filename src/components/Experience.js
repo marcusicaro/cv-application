@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ExperienceRender from './ExperienceRender';
+import {ExperienceRender} from './ExperienceRender';
 import uniqid from "uniqid";
 
 class Experience extends Component {
@@ -65,7 +65,7 @@ class Experience extends Component {
   render() {
     const {company, position, tasks, startDate, endDate} = this.state
     return (
-    <div>
+    <div className='form-cv'>
       <form onSubmit={this.onSubmitForm}>
         <div className='form-content'>
           <div className='input-content'>
@@ -91,7 +91,10 @@ class Experience extends Component {
         </div>
         <button type='submit'>Add</button>
       </form>
-      <ExperienceRender experiences={this.state.experiences}/>
+      <div className='cv-preview'>
+        <h3>Experience </h3>
+        <ExperienceRender experiences={this.state.experiences}/>
+      </div>
     </div>
     )
   }

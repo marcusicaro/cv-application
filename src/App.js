@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Main from "./components/Main";
 import General from "./components/General";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
@@ -12,9 +13,10 @@ class App extends Component {
   render () {
     return (
       <div>
-          <General />
+        <Main />
+          {/* <General />
           <Experience />
-          <Education />
+          <Education /> */}
       </div>
     )
   };

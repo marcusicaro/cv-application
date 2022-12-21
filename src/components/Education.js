@@ -43,7 +43,7 @@ class Education extends Component {
   render() {
     const {school, title, date} = this.state;
     return (
-      <div>
+      <div className='form-cv'>
         <form onSubmit={this.onSubmitForm}>
           <div className='form-content'>
           <div className='input-content'>
@@ -61,7 +61,10 @@ class Education extends Component {
           </div>
           <button type='submit'>Add</button>
         </form>
+        <div className='cv-preview'>
+        <h3>Education </h3>
         <EducationRender education={this.state.education}/>
+        </div>
       </div>
     )
   }

@@ -38,7 +38,7 @@ class General extends Component {
   render() {
     const {name, email, phone} = this.state
     return (
-        <div>
+        <div className='form-cv'>
           <form onSubmit={this.onSubmitForm}>
             <div className='form-content'>
                 <div className='input-content'>
@@ -56,7 +56,9 @@ class General extends Component {
             </div>    
                 <button type='submit'>Add</button>
           </form>
+          <div className='cv-preview'>
           <GeneralRender name={name} email={email} phone={phone}/>
+          </div>
         </div>
 
     )

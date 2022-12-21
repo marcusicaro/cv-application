@@ -1,13 +1,33 @@
-.form-content {
-    display: grid;
-    grid-template-columns: 200px 200px;
-    gap: 15px;
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=EB+Garamond:wght@400;700&display=swap');
+
+body {
+    background-color: rgba(192, 192, 192, 0.603);
 }
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
 form {
+    width: 350px;
     display: grid;
-    /* grid-template-rows: min-content min-content; */
-    gap: 15px;
+    gap: 10px;
     font-family: serif;
+    background-color: white;
+    padding: 25px;
+}
+
+p {
+    font-family: 'Cabin', sans-serif;
+    margin: 3px;
+}
+
+h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 30px;
+    color: #23316d;
 }
 
 input {
@@ -15,22 +35,64 @@ input {
     -webkit-appearance: none;
 	-moz-appearance: none;
     border: 1px solid silver;
+    height: 1rem;
 }
 
 input:focus {
     outline: 1px solid silver;
 }
 
+
 button {
     appearance: none;
     color: aliceblue;
     background-color: black;
-    outline: 1px solid white;
+    outline: 1px solid aliceblue;
     width: 100px;
     font-family: sans-serif;
+    margin-bottom: 25px;
+    height: 1.5rem;
 }
 
-.input-content {
+textarea {
+    border: 1px solid silver;
+    appearance: none;
+    resize: none;
+    height: 4em;
+}
+
+textarea:focus {
+    outline: 1px solid silver;
+}
+
+#render-task {
+    white-space: pre-wrap;
+}
+
+.cv-preview {
+    background-color: white;
+    width: 700px;
+    height: min-content;
+    padding: 50px;
+}
+
+
+
+.general-info h3 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.experience-content, .education-content {
     display: grid;
-    gap: 5px;
+    gap: 35px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.trash {
+    display: none;
+}
+
+.education-content:hover .trash {
+    display: block;
 }
