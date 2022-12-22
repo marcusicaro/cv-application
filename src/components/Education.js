@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { EducationRender } from './EducationRender';
 import uniqid from "uniqid";
 
 class Education extends Component {
@@ -10,33 +9,26 @@ class Education extends Component {
             school: '',
             title: '',
             date: '',
-            education: [],
         }
     
     }
 
-    schoolChange = (e) => {
-      this.setState({
-          school: e.target.value,
-      })
-    }
+    handleInputChange = (e) => {
+      const target = e.target;
+      const name = target.name;
   
-    titleChange = (e) => {
       this.setState({
-          title: e.target.value,
-      })
-    }
-  
-    dateChange = (e) => {
-      this.setState({
-          date: e.target.value,
+        [name]: target.value
       })
     }
 
     onSubmitForm = (e) => {
       e.preventDefault();
+      this.props.setEducation({...this.state, id: uniqid()});
       this.setState({
-        education: [...this.state.education, {school: this.state.school, title: this.state.title, date: this.state.date, id: uniqid()}]
+        school: '',
+        title: '',
+        date: '',
       })
     }
 
@@ -48,23 +40,19 @@ class Education extends Component {
           <div className='form-content'>
           <div className='input-content'>
           <label htmlFor="school">School: </label>
-          <input value={school} onChange={this.schoolChange} type="text" id="school"></input>
+          <input name="school" value={school} onChange={this.handleInputChange} type="text" id="school"></input>
           </div>
           <div className='input-content'>
           <label htmlFor="title">Title: </label>
-          <input value={title} onChange={this.titleChange} type="text" id="title"></input>
+          <input name="title" value={title} onChange={this.handleInputChange} type="text" id="title"></input>
           </div>
           <div className='input-content'>
           <label htmlFor="date">Date: </label>
-          <input value={date} onChange={this.dateChange} type="text" id="date"></input>
+          <input name="date" value={date} onChange={this.handleInputChange} type="text" id="date"></input>
           </div>
           </div>
           <button type='submit'>Add</button>
         </form>
-        <div className='cv-preview'>
-        <h3>Education </h3>
-        <EducationRender education={this.state.education}/>
-        </div>
       </div>
     )
   }

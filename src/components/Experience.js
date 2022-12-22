@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {ExperienceRender} from './ExperienceRender';
 import uniqid from "uniqid";
 
 class Experience extends Component {
@@ -11,55 +10,28 @@ class Experience extends Component {
         tasks: '',
         startDate: '',
         endDate: '',
-        experiences: [
-        ],
     }
   }
 
-  companyChange = (e) => {
-    this.setState({
-      company: e.target.value
-    })
-  }
+  handleInputChange = (e) => {
+    const target = e.target;
+    const name = target.name;
 
-  positionChange = (e) => {
     this.setState({
-      position: e.target.value
-    })
-  }
-
-  tasksChange = (e) => {
-    this.setState({
-      tasks: e.target.value
-    })
-  }
-
-  startDateChange = (e) => {
-    this.setState({
-      startDate: e.target.value
-    })
-  }
-
-  endDateChange = (e) => {
-    this.setState({
-      endDate: e.target.value
+      [name]: target.value
     })
   }
 
   onSubmitForm = (e) => {
     e.preventDefault();
+    this.props.setExperience({...this.state, id:uniqid()});
     this.setState({
-      experiences: [
-        ...this.state.experiences, {
-        company: this.state.company, 
-        position: this.state.position, 
-        tasks: this.state.tasks, 
-        startDate: this.state.startDate,
-        endDate: this.state.endDate,
-        id: uniqid(),
-        },
-      ]
-    }) 
+      company: '',
+      position: '',
+      tasks: '',
+      startDate: '',
+      endDate: '',
+    })
   }
 
   render() {
@@ -70,31 +42,27 @@ class Experience extends Component {
         <div className='form-content'>
           <div className='input-content'>
           <label htmlFor="company">Company: </label>
-          <input value={company} onChange={this.companyChange} type="text" id="company"></input>
+          <input name="company" value={company} onChange={this.handleInputChange} type="text" id="company"></input>
           </div>
           <div className='input-content'>
           <label htmlFor="position">Position: </label>
-          <input value={position} onChange={this.positionChange} type="text" id="position"></input>
+          <input name="position" value={position} onChange={this.handleInputChange} type="text" id="position"></input>
           </div>
           <div className='input-content'>
           <label htmlFor="tasks">Tasks: </label>
-          <input value={tasks} onChange={this.tasksChange} type="text" id="tasks"></input>
+          <input name="tasks" value={tasks} onChange={this.handleInputChange} type="text" id="tasks"></input>
           </div>
           <div className='input-content'>
           <label htmlFor="startDate">Start date: </label>
-          <input value={startDate} onChange={this.startDateChange} type="text" id="startDate"></input>
+          <input name="startDate" value={startDate} onChange={this.handleInputChange} type="text" id="startDate"></input>
           </div>
           <div className='input-content'>
           <label htmlFor="endDate">End date: </label>
-          <input value={endDate} onChange={this.endDateChange} type="text" id="endDate"></input>
+          <input name="endDate" value={endDate} onChange={this.handleInputChange} type="text" id="endDate"></input>
           </div>
         </div>
         <button type='submit'>Add</button>
       </form>
-      <div className='cv-preview'>
-        <h3>Experience </h3>
-        <ExperienceRender experiences={this.state.experiences}/>
-      </div>
     </div>
     )
   }

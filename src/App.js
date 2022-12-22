@@ -14,9 +14,6 @@ class App extends Component {
     return (
       <div>
         <Main />
-          {/* <General />
-          <Experience />
-          <Education /> */}
       </div>
     )
   };

@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const GeneralRender = ({name, role, location, email, phone}) => {
+export const GeneralRender = ({props}) => {
+  const {name, role, location, email, phone} = props
   return (
     <div className='general-info'>
         <h3>{name}</h3>

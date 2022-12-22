@@ -2,7 +2,6 @@ import React from 'react'
 // import uniqid from "uniqid";
 
 export const ExperienceRender = ({experiences, deleteExperience}) => {
-    // const {experiences} = props;
   return (
     <div className="experience-content">
         {experiences.map((experience) => {
