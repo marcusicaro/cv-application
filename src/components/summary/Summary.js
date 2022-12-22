@@ -25,10 +25,9 @@ export default class Summary extends Component {
     return (
         <div className='form-cv'>
           <form onSubmit={this.onSubmitForm} className="add-form">
-                <h3>Summary</h3>
                 <div className='input-content'>
-                <label htmlFor="summary">Summary: </label>
-                <input name="summary" value={summary} onChange={this.handleInputChange} type="text" id="summary"></input>
+                <label htmlFor="summary">Summary:</label>
+                <textarea name="summary" value={summary} onChange={this.handleInputChange} id="summary"></textarea>
                 </div>  
           </form>
         </div>

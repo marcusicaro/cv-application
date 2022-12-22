@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import General from './General';
-import  Experience from './Experience';
-import Education from './Education';
-import { GeneralRender } from './GeneralRender';
-import { ExperienceRender } from './ExperienceRender';
-import { EducationRender } from './EducationRender';
-import Summary from './Summary';
-import { SummaryRender } from './SummaryRender';
+import General from './general/General';
+import  Experience from './experience/Experience';
+import Education from './education/Education';
+import { GeneralRender } from './general/GeneralRender';
+import { ExperienceRender } from './experience/ExperienceRender';
+import { EducationRender } from './education/EducationRender';
+import Summary from './summary/Summary';
+import { SummaryRender } from './summary/SummaryRender';
 
 export default class Main extends Component {
   constructor(props) {
@@ -39,16 +39,12 @@ export default class Main extends Component {
     })
   }
 
-  // vai achar o objeto com o ID equivalente
-  // pegar os valores novos num campo de input
-  // trocar todos os itens (school, title, date) do objeto com aquele ID 
   // editEducation = (id) => {
   //   this.setState({
   //     education: this.state.education.map(el => (el.id === id ? {...el, school:'123123'} : el))
   //   })
   // }
   editEducation = (id, newSchool, newTitle, newDate) => {
-    // console.log('ASDASD')
     let findIndex = this.state.education.findIndex(item => item.id === id)
     let copyEducation = [...this.state.education]
     copyEducation[findIndex] = {school: [newSchool], title: [newTitle], date: [newDate], id: [id]}

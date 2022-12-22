@@ -50,7 +50,7 @@ class Experience extends Component {
           </div>
           <div className='input-content'>
           <label htmlFor="tasks">Tasks: </label>
-          <input name="tasks" value={tasks} onChange={this.handleInputChange} type="text" id="tasks"></input>
+          <textarea name="tasks" value={tasks} onChange={this.handleInputChange} type="text" id="tasks"></textarea>
           </div>
           <div className='input-content'>
           <label htmlFor="startDate">Start date: </label>

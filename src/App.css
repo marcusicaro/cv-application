@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=EB+Garamond:wght@400;700&display=swap');
 
 body {
-    background-color: rgba(192, 192, 192, 0.603);
+    background-color: rgba(7, 7, 7, 0.603);
 }
 
 .main {
@@ -25,6 +25,7 @@ p {
 }
 
 h3 {
+    /* font-family: 'EB Garamond', serif; */
     font-family: 'Cabin', sans-serif;
 }
 
@@ -48,7 +49,6 @@ button {
     outline: 1px solid aliceblue;
     width: 100px;
     font-family: sans-serif;
-    margin-bottom: 25px;
     height: 1.5rem;
 }
 
@@ -87,27 +87,35 @@ textarea:focus {
     grid-template-columns: 1fr 1fr;
 }
 
-.trash {
+.edit-field {
     display: none;
+    width: 230px;
+    background-color: white;
+    padding: 15px;
+    gap: 15px;
 }
 
-.pen {
-    display:none;
+.edit-buttons {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    justify-content: space-between;
 }
 
-.education-content:hover .pen {
+.input-content {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content;
+    gap: 5px;
+}
+
+.experience-content:hover .edit-field {
     margin-left: 2px;
     display: block;
 }
 
 
-.experience-content:hover .pen {
-    margin-left: 2px;
-    display: block;
-}
-
-
-.education-content:hover .trash {
+.education-content:hover .edit-field {
     margin-left: 2px;
     display: block;
 }
