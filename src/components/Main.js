@@ -5,15 +5,12 @@ import Education from './Education';
 import { GeneralRender } from './GeneralRender';
 import { ExperienceRender } from './ExperienceRender';
 import { EducationRender } from './EducationRender';
-import uniqid from "uniqid";
 import Summary from './Summary';
 import { SummaryRender } from './SummaryRender';
 
 export default class Main extends Component {
   constructor(props) {
     super(props);
-
-    // this.setGeneral = this.setGeneral.bind(this)
 
     this.state = {
       general:[],
@@ -23,45 +20,62 @@ export default class Main extends Component {
     }
   }
 
-  setGeneral = (obj) => {
+  handleState = (obj, type) => {
     this.setState({
-      general: obj
+      [type]: obj
     })
   }
 
-  setSummary = (obj) => {
+  handleStateArray = (obj, type) => {
     this.setState({
-      summary: obj
+      [type]: [...this.state[type], obj]
     })
   }
 
-  setEducation = (obj) => {
+  deleteItem = (id, type) => {
+    let filteredArray = this.state[type].filter(item => item.id !== id)
     this.setState({
-      education: [...this.state.education, obj]
+      [type]: filteredArray
     })
   }
 
-  setExperience = (obj) => {
+  // vai achar o objeto com o ID equivalente
+  // pegar os valores novos num campo de input
+  // trocar todos os itens (school, title, date) do objeto com aquele ID 
+  // editEducation = (id) => {
+  //   this.setState({
+  //     education: this.state.education.map(el => (el.id === id ? {...el, school:'123123'} : el))
+  //   })
+  // }
+  editEducation = (id, newSchool, newTitle, newDate) => {
+    let findIndex = this.state.education.findIndex(item => item.id === id)
+    let copyEducation = [...this.state.education]
+    copyEducation[findIndex] = {school: [newSchool], title: [newTitle], date: [newDate], id: [id]}
     this.setState({
-      experience: [...this.state.experience, obj]
+      education: [...copyEducation]
     })
+  }
+
+
+  editExperience = (id) => {
+    console.log(id)
   }
 
   render() {
-    const {general, experience, education} = this.state
+    const {general, summary, experience, education} = this.state
     return (
       <div className='main'>
         <div className='forms'>
-          <General setGeneral={this.setGeneral} />
-          <Summary setSummary={this.setSummary} />
-          <Experience setExperience={this.setExperience} />
-          <Education setEducation={this.setEducation} />
+          <General handleState={this.handleState} />
+          <Summary handleState={this.handleState} />
+          <Experience handleStateArray={this.handleStateArray} />
+          <Education handleStateArray={this.handleStateArray} />
         </div>
         <div className='preview'>
-          <GeneralRender props={this.state.general} />
-          <SummaryRender props={this.state.summary} />
-          <ExperienceRender experiences={this.state.experience} />
-          <EducationRender education={this.state.education} />
+          <GeneralRender props={general} />
+          <SummaryRender props={summary} />
+          <ExperienceRender experiences={experience} deleteExperience={this.deleteItem} editExperience={this.editExperience}/>
+          <EducationRender education={education} deleteEducation={this.deleteItem} editEducation={this.editEducation}/>
         </div>
         
       </div>

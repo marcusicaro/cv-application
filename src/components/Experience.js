@@ -24,7 +24,7 @@ class Experience extends Component {
 
   onSubmitForm = (e) => {
     e.preventDefault();
-    this.props.setExperience({...this.state, id:uniqid()});
+    this.props.handleStateArray({...this.state, id:uniqid()}, 'experience');
     this.setState({
       company: '',
       position: '',

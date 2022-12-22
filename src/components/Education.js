@@ -24,7 +24,7 @@ class Education extends Component {
 
     onSubmitForm = (e) => {
       e.preventDefault();
-      this.props.setEducation({...this.state, id: uniqid()});
+      this.props.handleStateArray({...this.state, id: uniqid()}, 'education');
       this.setState({
         school: '',
         title: '',

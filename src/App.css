@@ -93,6 +93,35 @@ textarea:focus {
     display: none;
 }
 
-.education-content:hover .trash {
+.pen {
+    display:none;
+}
+
+.education-content:hover .pen {
+    margin-left: 2px;
     display: block;
+}
+
+
+.experience-content:hover .pen {
+    margin-left: 2px;
+    display: block;
+}
+
+
+.education-content:hover .trash {
+    margin-left: 2px;
+    display: block;
+}
+
+.experience-content:hover .trash {
+    margin-left: 2px;
+    display: block;
+}
+
+
+
+.icons {
+    display: grid;
+    grid-auto-flow: column;
 }

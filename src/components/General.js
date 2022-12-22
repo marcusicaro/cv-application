@@ -21,7 +21,7 @@ class General extends Component {
       [name]: target.value
     })
 
-    this.props.setGeneral({...this.state, [name]: target.value})
+    this.props.handleState({...this.state, [name]: target.value}, 'general')
   }
 
   render() {

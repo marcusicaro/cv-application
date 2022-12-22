@@ -17,7 +17,7 @@ export default class Summary extends Component {
           [name]: target.value
         })
     
-        this.props.setSummary({...this.state, [name]: target.value})
+        this.props.handleState({...this.state, [name]: target.value}, 'summary')
       }
 
   render() {
