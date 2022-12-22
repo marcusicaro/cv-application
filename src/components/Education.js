@@ -36,7 +36,7 @@ class Education extends Component {
     const {school, title, date} = this.state;
     return (
       <div className='form-cv'>
-        <form onSubmit={this.onSubmitForm}>
+        <form onSubmit={this.onSubmitForm} className="add-form">
           <div className='form-content'>
           <div className='input-content'>
           <label htmlFor="school">School: </label>

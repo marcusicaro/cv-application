@@ -10,7 +10,7 @@ body {
     gap: 50px;
 }
 
-form {
+.add-form {
     width: 350px;
     display: grid;
     gap: 10px;
@@ -25,9 +25,7 @@ p {
 }
 
 h3 {
-    font-family: 'EB Garamond', serif;
-    font-size: 30px;
-    color: #23316d;
+    font-family: 'Cabin', sans-serif;
 }
 
 input {

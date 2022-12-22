@@ -24,7 +24,8 @@ export default class Summary extends Component {
     const {summary} = this.state
     return (
         <div className='form-cv'>
-          <form onSubmit={this.onSubmitForm}>
+          <form onSubmit={this.onSubmitForm} className="add-form">
+                <h3>Summary</h3>
                 <div className='input-content'>
                 <label htmlFor="summary">Summary: </label>
                 <input name="summary" value={summary} onChange={this.handleInputChange} type="text" id="summary"></input>

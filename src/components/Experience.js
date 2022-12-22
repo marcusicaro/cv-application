@@ -38,7 +38,7 @@ class Experience extends Component {
     const {company, position, tasks, startDate, endDate} = this.state
     return (
     <div className='form-cv'>
-      <form onSubmit={this.onSubmitForm}>
+      <form onSubmit={this.onSubmitForm} className="add-form">
         <div className='form-content'>
           <div className='input-content'>
           <label htmlFor="company">Company: </label>

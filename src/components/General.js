@@ -28,7 +28,7 @@ class General extends Component {
     const {name, role, location, email, phone} = this.state
     return (
         <div className='form-cv'>
-          <form onSubmit={this.onSubmitForm}>
+          <form onSubmit={this.onSubmitForm} className="add-form">
                 <div className='input-content'>
                 <label htmlFor="name">Name: </label>
                 <input name="name" value={name} onChange={this.handleInputChange} type="text" id="name"></input>

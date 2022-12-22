@@ -48,6 +48,7 @@ export default class Main extends Component {
   //   })
   // }
   editEducation = (id, newSchool, newTitle, newDate) => {
+    // console.log('ASDASD')
     let findIndex = this.state.education.findIndex(item => item.id === id)
     let copyEducation = [...this.state.education]
     copyEducation[findIndex] = {school: [newSchool], title: [newTitle], date: [newDate], id: [id]}

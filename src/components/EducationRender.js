@@ -1,6 +1,7 @@
 import React from 'react'
+import EducationEdit from './EducationEdit'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faPencil } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons'
 
 
 export const EducationRender = ({education, deleteEducation, editEducation}) => {
@@ -9,11 +10,14 @@ export const EducationRender = ({education, deleteEducation, editEducation}) => 
         {education.map((e) => {
             return (
             <div key={e.id}>
-            <p><b>School: </b>{e.school}</p>
-            <p><b>Title: </b>{e.title}</p>
-            <p><b>Date: </b>{e.date}</p>
-            <FontAwesomeIcon icon={faTrash} className="trash" onClick={() => {deleteEducation(e.id, 'education')}}/>
-            <FontAwesomeIcon icon={faPencil} className="pen" onClick={() => {editEducation()}}/>
+              <p><b>School: </b>{e.school}</p>
+              <p><b>Title: </b>{e.title}</p>
+              <p><b>Date: </b>{e.date}</p>
+              <div className='icons'>
+                <FontAwesomeIcon icon={faTrash} className="trash" onClick={() => {deleteEducation(e.id, 'education')}}/>
+                <FontAwesomeIcon icon={faPen} className="pen" onClick={() => {editEducation()}}/>
+                <EducationEdit editEducation={editEducation} id={e.id} school={e.school} title={e.title} date={e.date}/>
+              </div>
             </div>
             )
         })}
