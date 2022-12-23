@@ -11,7 +11,7 @@ export const ExperienceRender = ({experiences, deleteExperience, editExperience}
                 <p>{e.startDate} - {e.endDate}</p>
                 <p id='render-task'>{e.tasks}</p>
                 <div>
-                <ExperienceEdit editExperience={editExperience} id={e.id} company={e.company} position={e.position} startDate={e.startDate} endDate={e.endDate} deleteExperience={deleteExperience}/>
+                <ExperienceEdit editExperience={editExperience} id={e.id} company={e.company} position={e.position} startDate={e.startDate} endDate={e.endDate} tasks={e.tasks} deleteExperience={deleteExperience}/>
                 </div>
             </div>
             )
