@@ -39,7 +39,6 @@ class Experience extends Component {
     return (
     <div className='form-cv'>
       <form onSubmit={this.onSubmitForm} className="add-form">
-        <div className='form-content'>
           <div className='input-content'>
           <label htmlFor="company">Company: </label>
           <input name="company" value={company} onChange={this.handleInputChange} type="text" id="company"></input>
@@ -60,7 +59,6 @@ class Experience extends Component {
           <label htmlFor="tasks">Tasks: </label>
           <textarea name="tasks" value={tasks} onChange={this.handleInputChange} type="text" id="tasks"></textarea>
           </div>
-        </div>
         <button type='submit'>Add</button>
       </form>
     </div>

@@ -37,7 +37,6 @@ class Education extends Component {
     return (
       <div className='form-cv'>
         <form onSubmit={this.onSubmitForm} className="add-form">
-          <div className='form-content'>
           <div className='input-content'>
           <label htmlFor="school">School: </label>
           <input name="school" value={school} onChange={this.handleInputChange} type="text" id="school"></input>
@@ -49,7 +48,6 @@ class Education extends Component {
           <div className='input-content'>
           <label htmlFor="date">Date: </label>
           <input name="date" value={date} onChange={this.handleInputChange} type="text" id="date"></input>
-          </div>
           </div>
           <button type='submit'>Add</button>
         </form>
