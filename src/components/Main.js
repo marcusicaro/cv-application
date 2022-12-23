@@ -39,11 +39,6 @@ export default class Main extends Component {
     })
   }
 
-  // editEducation = (id) => {
-  //   this.setState({
-  //     education: this.state.education.map(el => (el.id === id ? {...el, school:'123123'} : el))
-  //   })
-  // }
   editEducation = (id, newSchool, newTitle, newDate) => {
     let findIndex = this.state.education.findIndex(item => item.id === id)
     let copyEducation = [...this.state.education]
@@ -53,9 +48,13 @@ export default class Main extends Component {
     })
   }
 
-
-  editExperience = (id) => {
-    console.log(id)
+  editExperience = (id, newCompany, newPosition, newStartDate, newEndDate, newTasks) => {
+    let findIndex = this.state.experience.findIndex(item => item.id === id)
+    let copyExperience = [...this.state.experience]
+    copyExperience[findIndex] = {company: [newCompany], position: [newPosition], startDate: [newStartDate], endDate: [newEndDate], tasks: [newTasks], id: [id]}
+    this.setState({
+      experience: [...copyExperience]
+    })
   }
 
   render() {
@@ -70,8 +69,11 @@ export default class Main extends Component {
         </div>
         <div className='preview'>
           <GeneralRender props={general} />
+          <h2>Summary</h2>
           <SummaryRender props={summary} />
+          <h2>Experience</h2>
           <ExperienceRender experiences={experience} deleteExperience={this.deleteItem} editExperience={this.editExperience}/>
+          <h2>Education</h2>
           <EducationRender education={education} deleteEducation={this.deleteItem} editEducation={this.editEducation}/>
         </div>
         

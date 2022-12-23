@@ -4,7 +4,7 @@ export const SummaryRender = ({props}) => {
   const {summary} = props
   return (
     <div className='summary-info'>
-        <p>{summary}</p>
+        <p id='summary-text'>{summary}</p>
     </div>
   )
 }

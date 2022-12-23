@@ -7,9 +7,9 @@ class Experience extends Component {
     this.state = {
         company: '',
         position: '',
-        tasks: '',
         startDate: '',
         endDate: '',
+        tasks: '',
     }
   }
 
@@ -49,16 +49,16 @@ class Experience extends Component {
           <input name="position" value={position} onChange={this.handleInputChange} type="text" id="position"></input>
           </div>
           <div className='input-content'>
-          <label htmlFor="tasks">Tasks: </label>
-          <textarea name="tasks" value={tasks} onChange={this.handleInputChange} type="text" id="tasks"></textarea>
-          </div>
-          <div className='input-content'>
           <label htmlFor="startDate">Start date: </label>
           <input name="startDate" value={startDate} onChange={this.handleInputChange} type="text" id="startDate"></input>
           </div>
           <div className='input-content'>
           <label htmlFor="endDate">End date: </label>
           <input name="endDate" value={endDate} onChange={this.handleInputChange} type="text" id="endDate"></input>
+          </div>
+          <div className='input-content'>
+          <label htmlFor="tasks">Tasks: </label>
+          <textarea name="tasks" value={tasks} onChange={this.handleInputChange} type="text" id="tasks"></textarea>
           </div>
         </div>
         <button type='submit'>Add</button>
