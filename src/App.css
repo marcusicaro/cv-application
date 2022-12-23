@@ -154,3 +154,10 @@ textarea:focus {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+@media screen and (max-width: 650px) {
+    .main {
+        grid-template-columns: min-content;
+        grid-template-rows: min-content min-content;
+    }
+}
