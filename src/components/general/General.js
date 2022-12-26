@@ -43,11 +43,11 @@ class General extends Component {
                 </div>
                 <div className='input-content'>
                 <label htmlFor="email">Email: </label>
-                <input name="email" value={email} onChange={this.handleInputChange} type="text" id="email"></input>
+                <input name="email" value={email} onChange={this.handleInputChange} type="email" id="email" required></input>
                 </div>
                 <div className='input-content'>
                 <label htmlFor="phone">Phone: </label>
-                <input name="phone" value={phone} onChange={this.handleInputChange} type="text" id="phone"></input>
+                <input name="phone" value={phone} onChange={this.handleInputChange} type="tel" id="phone" required></input>
                 </div>  
           </form>
         </div>

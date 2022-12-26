@@ -39,11 +39,11 @@ class Education extends Component {
         <form onSubmit={this.onSubmitForm} className="add-form">
           <div className='input-content'>
           <label htmlFor="school">School: </label>
-          <input name="school" value={school} onChange={this.handleInputChange} type="text" id="school"></input>
+          <input name="school" value={school} onChange={this.handleInputChange} type="text" id="school" required></input>
           </div>
           <div className='input-content'>
           <label htmlFor="title">Title: </label>
-          <input name="title" value={title} onChange={this.handleInputChange} type="text" id="title"></input>
+          <input name="title" value={title} onChange={this.handleInputChange} type="text" id="title" required></input>
           </div>
           <div className='input-content'>
           <label htmlFor="date">Date: </label>

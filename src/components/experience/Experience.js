@@ -41,11 +41,11 @@ class Experience extends Component {
       <form onSubmit={this.onSubmitForm} className="add-form">
           <div className='input-content'>
           <label htmlFor="company">Company: </label>
-          <input name="company" value={company} onChange={this.handleInputChange} type="text" id="company"></input>
+          <input name="company" value={company} onChange={this.handleInputChange} type="text" id="company" minLength={2} required></input>
           </div>
           <div className='input-content'>
           <label htmlFor="position">Position: </label>
-          <input name="position" value={position} onChange={this.handleInputChange} type="text" id="position"></input>
+          <input name="position" value={position} onChange={this.handleInputChange} type="text" id="position" minLength={3} required></input>
           </div>
           <div className='input-content'>
           <label htmlFor="startDate">Start date: </label>
